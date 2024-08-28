@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserSchema {
+  id: Int!
+  name: String!
+  email: String!
+  password: String!
+}
+
+type LoginResponse {
+  accessToken: String!
+}
+
+type Query {
+  users: [UserSchema!]!
+  userByEmail(email: String!): UserSchema!
+  user(id: Int!): UserSchema!
+}
+
+type Mutation {
+  login(loginInput: LoginInput!): LoginResponse!
+  createUser(createUserInput: CreateUserInput!): UserSchema!
+  updateUser(updateUserInput: UpdateUserInput!): UserSchema!
+  removeUser(id: Int!): String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  id: Int!
+  name: String!
+  email: String!
+  password: String!
+}
